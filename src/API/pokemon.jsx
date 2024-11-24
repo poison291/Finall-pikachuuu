@@ -10,9 +10,7 @@ export default function Pokemon() {
   <>
     <div className="bg-gray-800 h-lvh">
       <div className="">
-  <div className="">
 
-  </div>
         <div className="text-white">
       <h1>{pokemon.name}</h1>
         </div>
