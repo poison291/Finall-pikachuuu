@@ -7,9 +7,7 @@ export default function Pokemon() {
   const location = useLocation();
   const { pokemon } = location.state;
 
-  const [imageIndex, setimageIndex] = useState(0);
-
-  console.log(pokemon);
+  const [imageIndex, setImageIndex] = useState(0);
 
   const PokeImage = [
     pokemon?.sprites?.other?.dream_world?.front_default,
@@ -23,17 +21,15 @@ export default function Pokemon() {
   ].filter(Boolean);
 
   const prevImage = () => {
-    setimageIndex((prevIndex) => {
-      const newIndex = prevIndex > 0 ? prevIndex - 1 : PokeImage.length - 1;
-      return newIndex;
-    });
+    setImageIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : PokeImage.length - 1
+    );
   };
 
   const nextImage = () => {
-    setimageIndex((prevIndex) => {
-      const newIndex = prevIndex < PokeImage.length - 1 ? prevIndex + 1 : 0;
-      return newIndex;
-    });
+    setImageIndex((prevIndex) =>
+      prevIndex < PokeImage.length - 1 ? prevIndex + 1 : 0
+    );
   };
 
   return (
@@ -67,6 +63,13 @@ export default function Pokemon() {
             className="text-6xl text-slate-400 ml-9 cursor-pointer hover:text-white"
           />
         </div>
+
+        {/* Evolve Button */}
+        <button
+          className="mt-4 px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
+        >
+          Evolve
+        </button>
       </div>
     </div>
   );
