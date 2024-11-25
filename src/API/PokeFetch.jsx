@@ -50,6 +50,9 @@ export default function PokeFetch() {
     }
   };
 
+
+  //TODO: search functionality to be added
+
   // const searchData =pokemon.filter((pokemon) =>
   //   pokemon.name.toLowerCase().includes(search.toLocaleLowerCase())
   // ) 
